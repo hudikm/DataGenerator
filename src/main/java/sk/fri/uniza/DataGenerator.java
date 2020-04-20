@@ -26,7 +26,7 @@ public class DataGenerator {
         iterator = dataList.iterator();
     }
 
-    private List<PowerData> dataList;
+    List<PowerData> dataList;
 
     public DataGenerator() throws IOException {
 
@@ -46,7 +46,7 @@ public class DataGenerator {
         return myDateObj.format(dataFormatObj);
     }
 
-    public PowerData getData(LocalTime time) {
+    PowerData getData(LocalTime time) {
         assert (iterator != null);
 
         while (true) {
@@ -61,6 +61,10 @@ public class DataGenerator {
         }
     }
 
+    /**
+     *
+      * @return PowerData -  aktuálne dáta z meračov spotreby. Interval vzorkovania je 1 min
+     */
     public PowerData getCurrentData() {
         return getData(LocalTime.now());
     }
